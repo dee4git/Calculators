@@ -1,0 +1,3 @@
+S -> a S e | B
+B -> b B C f | C
+C -> c C g | d | epsilon

@@ -1,9 +1,10 @@
-import math, numpy as np
+import math
+import numpy as np
 
 # test: https://www.rapidtables.com/convert/color/rgb-to-hex.html
-h = 190
-s = .8
-i = .1
+h = 274
+s = .89
+i = .94
 x = h
 if 120 <= h < 240:
     h = h - 120
