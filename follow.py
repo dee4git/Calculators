@@ -54,7 +54,7 @@ for x in range(2):
                         recursive_updater(i, chunk, index)
 
 print('--------------------------')
-print('state:  follow : follow_safe')
+print('state :  follow : follow_safe')
 for i in objs:
     # duplicate removal
     i.follow = f.word_tokenize(i.follow)

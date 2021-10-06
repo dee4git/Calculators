@@ -63,9 +63,8 @@ def cutter(p):
 
                 print('After cut x,y =', end=" ")
                 print(new_x, ',', new_y)
-                break
                 # new_c2 = get_code(new_x, new_y)
-            elif index == 2:
+            elif index == 1:
                 print('Bit', index + 1, 'is 1:')
                 new_x = x_max
                 print('new_x = ', new_x)
@@ -75,9 +74,8 @@ def cutter(p):
 
                 print('After cut x,y =', end=" ")
                 print(new_x, ',', new_y)
-                break
-                # new_c1 = get_code(new_x, new_y)
-            elif index == 1:
+                # new_c2 = get_code(new_x, new_y)
+            elif index == 2:
                 print('Bit', index + 1, 'is 1:')
                 new_y = y_min
                 print('new_y = ', new_y)
@@ -87,20 +85,17 @@ def cutter(p):
 
                 print('After cut x,y =', end=" ")
                 print(new_x, ',', new_y)
-                break
-                # new_c2 = get_code(new_x, new_y)
 
+                # new_c1 = get_code(new_x, new_y)
             elif index == 3:
                 print('Bit', index + 1, 'is 1:')
                 new_x = x_min
                 print('new_x = ', new_x)
                 new_y = y1 + m * (x_min - x1)
                 print('new_y = ', y1, '+', m, '*', '(', x_min, '-', x1, ') =', new_y)
-
                 new_y = round(new_y, 2)
                 print('After cut x,y =', end=" ")
                 print(new_x, ',', new_y)
-                break
 
 
 def inspector(c1, c2):
@@ -133,10 +128,10 @@ def decider(c1, c2):
 
 
 # global input
-x1, y1 = 1, -2
-x2, y2 = 3, 3
-# x1, y1 = -1.6, 6
-# x2, y2 = -3, 3.67
+x1, y1 = 2, .5
+x2, y2 = 2.2, 1
+# x1, y1 = -4, 2
+# x2, y2 = -1, 7
 m = round((y2 - y1) / (x2 - x1), 2)
 print('P1 = ', x1, ',', y1)
 print('P2 = ', x2, ',', y2)
