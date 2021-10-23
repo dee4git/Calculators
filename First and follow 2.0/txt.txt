@@ -1,0 +1,4 @@
+A -> a | b | epsilon
+B -> c | d | epsilon
+C -> e | f | epsilon
+X -> A B C
