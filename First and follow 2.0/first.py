@@ -12,6 +12,7 @@ with open('txt.txt') as f:
 
 objs = []
 
+
 class Line:
     def __init__(self, left, right, chunks,
                  first, first_safe,
@@ -95,11 +96,10 @@ def custom_check(obz):
             obz.first_safe = True
 
 
-def recursive_remover(obz, chunks, up_next):
+def recursive_remover(obz, to_replace):
     global global_first
-    replace = 'should not show'
     temp = ''
-    replace = up_next
+    replace = to_replace
     print('replacing...', replace)
     for o in objs:
         if o.first_safe:
@@ -109,26 +109,29 @@ def recursive_remover(obz, chunks, up_next):
                 o.first = word_tokenize(o.first)
                 temp = ''
                 for fst in o.first:
-
                     if fst != 'epsilon':
                         temp += ' ' + fst
                     else:
                         up_next = get_next(obz, replace)
                         print('next is', up_next)
                         if up_next == 'kichu_nai':
-                            global_first += 'epsilon'
+                            if 'epsilon' not in obz.first:
+                                global_first += 'epsilon'
                         else:
-                            recursive_remover(obz=obz, chunks=chunks, up_next=up_next)
+                            recursive_remover(obz=obz, to_replace=up_next)
     for t in word_tokenize(temp):
-        global_first += ' ' + t
+        global_first += ' ' + t+' '
+    # doesnt handle multiple chunks
     obz.first = word_tokenize(global_first)
     custom_check(obz)
 
 
 for ob in objs:
     if not ob.first_safe:
-        print('sending...', ob.left)
-        recursive_remover(ob, ob.chunks, ob.chunks[0][0])
+        print('to replace', ob.first)
+        problems = word_tokenize(ob.first)
+        for problem in problems:
+            recursive_remover(ob, problem)
 
 # detokenizing...
 for ob in objs:
