@@ -128,8 +128,8 @@ def decider(c1, c2):
 
 
 # global input
-x1, y1 = 2, .5
-x2, y2 = 2.2, 1
+x1, y1 = -1, 5
+x2, y2 = 3, 8
 # x1, y1 = -4, 2
 # x2, y2 = -1, 7
 m = round((y2 - y1) / (x2 - x1), 2)

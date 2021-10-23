@@ -5,9 +5,12 @@ r = 2
 
 
 def coordinate(x, y):
+    print('Working for', x, y)
     sqr = (x - h) * (x - h) + (y - k) * (y - k)
+    print(sqrt(sqr))
     sqr = round(sqrt(sqr))
     if sqr == r:
+        print('found')
         print(x, y)
 
 
